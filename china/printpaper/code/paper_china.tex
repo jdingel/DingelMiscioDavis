@@ -1,0 +1,170 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{verbatim}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{bibentry}
+\usepackage{url}
+\usepackage{wrapfig}
+\usepackage[margin=1in]{geometry}
+\usepackage{framed}
+\usepackage{placeins}
+\usepackage{bbm}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{subfig}   % Supports \subfloat within \figure{} environment
+\usepackage{multirow}
+\usepackage[setpagesize=false,breaklinks=true]{hyperref}
+\hypersetup{
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links
+    citecolor=black,        % color of links to bibliography
+    urlcolor=blue           % color of external links
+}
+
+\begin{document}
+
+\section{China}
+
+\begin{figure}
+\caption*{Figure 1: Building metropolitan areas by aggregating smaller units based on
+lights at night\label{fig:night-lights-procedure}}
+\centering
+\subfloat[Inputs]{
+\includegraphics[height=0.25\textheight]{../input/nightlight_raster_township_2000_map.png}}
+\subfloat[Forming polygons]{
+\includegraphics[height=0.25\textheight]{../input/radar_map_townships_2000_30.png}}
+\subfloat[Metropolitan areas]{
+\includegraphics[height=0.25\textheight]{../input/assignment_map_townships_2000_metros_NTL30.png}}
+\begin{center}\begin{minipage}{0.95\textwidth}
+{\footnotesize
+	\textsc{Notes}:
+	This figure illustrates our procedure for combining satellite imagery of lights at night with administrative spatial units to build metropolitan areas.
+	These panels depict a portion of the eastern coast of China in 2000.
+	The administrative spatial units are townships.
+	The polygons in the middle panel are areas of contiguous light brighter than 30.
+	Aggregating the townships that intersect these polygons produces the metropolitan areas depicted in the right panel.
+	Adjacent townships are often assigned to distinct metropolitan areas.\par
+}
+\end{minipage}\end{center}
+\end{figure}
+
+
+\begin{table}
+\caption*{Table 1: Comparing Chinese township- and county-based metropolitan areas, 2000\label{tab:China-county-vs-township-2000}}
+\begin{centering}
+\input{../input/msa_compare_China_townships_counties_2000.tex}
+\par\end{centering}
+\centering{}%
+\begin{minipage}[t]{0.9\textwidth}%
+{\footnotesize \textsc{Notes}:
+The first column reports the number of metropolitan areas with population exceeding 100,000 that are defined by that row's metropolitan scheme.
+Each cell in the following six columns reports the correlation coefficient for log population or log land area
+between the metropolitan scheme identified in the row and the metropolitan scheme identified
+in the column pairs for China in 2000.
+We pair metropolitan areas for comparison as described in footnote 8.
+\par}
+\end{minipage}
+\end{table}
+
+\begin{figure}
+\caption*{Figure 6: Comparing night-lights--based metropolitan areas to prefecture-level
+cities, 2000\label{fig:Comparing-township-prefecturelevel}}
+\begin{centering}
+\includegraphics[width=0.5\textwidth]{../input/msa_prefecture_baseline_correlation_plot.pdf}
+\par\end{centering}
+\end{figure}
+
+
+\begin{table}
+\caption*{Table 2: China's city-size distribution with night-lights--based units, 2000
+and 2010}
+\label{tab:China-zipf-2000-2010}
+\begin{center}
+\input{../input/msa_compare_zipf_China_townships_2000_2010.tex} \\
+\begin{minipage}[t]{0.9\textwidth}%
+{\footnotesize \textsc{Notes}:
+This table reports the coefficient $\beta$, standard error, and $R^{2}$ from a linear regression of the form
+\begin{equation*}
+\ln (\text{rank}_i-0.5) = \alpha + \beta \ln \text{population}_i + \epsilon_i
+\end{equation*}
+where $\text{rank}_i$ is the population rank of metropolitan area $i$
+and the standard error is $\sqrt{2/N}\vert\hat{\beta}\vert$ (Gabaix and Ibragimov, 2011).
+The sample for each regression is a set of Chinese metropolitan areas in 2000 or 2010
+with population greater than 100,000.
+Night-lights--based metropolitan areas are defined by aggregating townships in contiguous areas with light intensity exceeding the listed threshold.\par
+}
+\end{minipage}
+\end{center}
+\end{table}
+
+
+
+\begin{figure}
+\caption*{Figure 7: China's city-size distribution with night-lights--based units, 2000
+and 2010\label{fig:China-zipf-2000-2010}}
+\begin{centering}
+\includegraphics[width=0.49\textwidth]{../input/2000_townships_msa30_night_100k.pdf}\includegraphics[width=0.49\textwidth]{../input/2010_townships_msa30_night_100k.pdf}
+\par\end{centering}
+\centering{}%
+\begin{minipage}[t]{0.85\textwidth}%
+\textsc{\footnotesize{}Notes}{\footnotesize{}: The sample is Chinese metropolitan
+areas with population greater than 100,000. Metropolitan areas defined
+by aggregating townships in areas of contiguous night lights with intensity
+greater than 30. Left panel depicts 2000; right panel 2010.\par}%
+\end{minipage}
+\end{figure}
+
+\begin{table} \caption*{Table 6: Population shares for educational categories, 2000} \begin{center}
+\input{../input/edu_shares_msa30_night.tex}
+\end{center}\end{table}
+
+
+\begin{table}
+\caption*{Table 7: Population elasticities for educational categories, 2000\label{tab:China-edu-population-elasticities}}
+\begin{center}
+\input{../input/popelast_eduagg_2000_100k_townships_counties.tex}
+\begin{minipage}[t]{0.85\textwidth}%
+{\footnotesize \textsc{Notes}:
+Each column reports OLS estimates of $\beta_{\nu}$ from a regression defined by  equation 1.
+Skill fixed effects $\alpha_{\nu}$ are not reported.
+Standard errors are clustered by geographic unit.
+Each sample contains geographic units with population greater than 100,000.\par}
+\end{minipage}
+\end{center}
+\end{table}
+
+
+\begin{table}[ph]
+\caption*{Table 11: Skill gradient in Chinese metropolitan areas, 2000}
+\label{tab:skillgradient}
+\begin{center}
+\input{../input/distance_gradient_college_2000.tex}
+\begin{minipage}{0.96\textwidth}
+{\footnotesize \textsc{Notes}:
+	The dependent variable is the share of residents who are college graduates in a constituent component,
+	which is a township in the upper panel and a county in the lower panel.
+	Distance to metro center is measured from the component centroid to the population-weighted average of constituent-component centroids
+  	as a share of the greatest such distance in the metropolitan area.
+  	The sample is restricted to metropolitan areas containing at least two constituent spatial units.
+	Standard errors, clustered by metropolitan area, in parentheses.
+	The reported $p$-values test the null hypothesis that the coefficients in the two panels within a column are equal.
+	The last line reports the number of clusters used in computing that test statistic.
+	See Appendix C.2 for details.\par
+}
+\end{minipage}
+\end{center}
+\end{table}
+
+\subsection*{Appendix}
+
+\input{../input/china_townships_area_2000_details.tex}
+\input{../input/china_counties_area_2000_details.tex}
+
+\begin{table} \caption*{Table C.1: Pairwise comparisons for educational categories, 2000} \begin{center}
+\input{../input/pairwise_edu_2000_4group.tex}
+\label{tab:edu_pairwise}
+\end{center}\end{table}
+
+\end{document}

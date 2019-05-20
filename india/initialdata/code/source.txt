@@ -1,0 +1,52 @@
+Data Appendix to Comparative Advantage of Cities - India
+--------------------------------------------------------
+
+Census data used in this project can be found at the URL:
+http://www.censusindia.gov.in/
+
+Some files used from this domain are retrieved directly:
+village_2011_2001_*.csv
+DDWCITY-B-09-0000.xlsx
+DDWCT-0000C-08.xlsx
+
+Census population counts (series B and C) can be found by navigating to
+Census Digital Library.
+From there, navigate to "Tables" to access data for Census years (2001, 2011).
+The result should be the active server page:
+http://www.censusindia.gov.in/DigitalLibrary/MFTableSeries.aspx
+where selections of the various series used in this project can be made.
+The files used in this project follow the form:
+B-9 City -  india.xls
+B-9 City*.xls
+C-8*.xls
+C-8 City*.xls
+
+Primary Census Abstracts can be found the same way, but instead
+by navigating to the corresponding Tables classified under
+``Primary Census Abstract'' at the link
+http://www.censusindia.gov.in/pca/pca.aspx
+The files used include:
+PCA_UA_Table_for_*.(xls,csv)
+Primary_Census_Abstract_Urban_Agglomeration_Table_For_*.xls
+
+--------------------------------------------------------------------------------
+
+FAQ:
+
+Why do we use "city" files?
+
+While population counts are available at the sub-district level,
+socioeconomic characteristics like educational composition are not.
+Thus, we are forced to use "urban agglomerations" for these exercises.
+Comparison of
+"B-9- Delhi.xls" ("district") and
+"B-9 City -  Delhi.xls" ("city") files:
+Delhi has nine districts.
+The Delhi urban agglomeration ("DMC(U) (M Corp.)")
+has components in all nine districts.
+At the same time, there are nine other urban agglomeration
+that are defined in this state.
+In the "district" file, you only see educational composition by district,
+while for the "city" file you see UAs' characteristics.
+Thus, our exercise about the distribution of skills in India is
+obviously hampered by this limitation.

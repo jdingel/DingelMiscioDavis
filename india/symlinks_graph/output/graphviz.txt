@@ -1,0 +1,24 @@
+digraph G {
+edushares -> printpaper
+initialdata -> nightlights
+initialdata -> publicdistro
+initialdata -> SDT_MSA_loaddata
+initialdata -> summstats
+initialdata -> town_MSA_loaddata
+initialdata -> urban_agglomerations
+nightlights -> SDT_MSA_loaddata
+nightlights -> summstats
+pairwise_comparisons -> printpaper
+populationelasticities -> printpaper
+SDT_MSA_loaddata -> publicdistro
+SDT_MSA_loaddata -> town_MSA_loaddata
+SDT_MSA_loaddata -> zipf
+summstats -> printpaper
+summstats -> SDT_MSA_loaddata
+town_MSA_loaddata -> edushares
+town_MSA_loaddata -> pairwise_comparisons
+town_MSA_loaddata -> populationelasticities
+town_MSA_loaddata -> zipf
+urban_agglomerations -> zipf
+zipf -> printpaper
+}

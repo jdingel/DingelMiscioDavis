@@ -1,0 +1,11 @@
+digraph G {
+CBSA -> county_to_MSA
+commuting -> county_to_MSA
+counties_loaddata -> county_to_MSA
+county_to_MSA -> CBSA_comparison
+initialdata -> CBSA
+initialdata -> commuting
+initialdata -> counties_loaddata
+initialdata -> nightlights
+nightlights -> county_to_MSA
+}

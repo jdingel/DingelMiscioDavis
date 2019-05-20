@@ -1,0 +1,199 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{verbatim}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{bibentry}
+\usepackage{url}
+\usepackage{wrapfig}
+\usepackage[margin=1in]{geometry}
+\usepackage{framed}
+\usepackage{placeins}
+\usepackage{bbm}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{subfig}   % Supports \subfloat within \figure{} environment
+\usepackage{multirow}
+\usepackage[setpagesize=false,breaklinks=true]{hyperref}
+\hypersetup{
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links
+    citecolor=black,        % color of links to bibliography
+    urlcolor=blue           % color of external links
+}
+
+\begin{document}
+
+\section{Brazil}
+
+\begin{figure}
+\caption*{Figure 3: Comparing population and land area across Brazilian metropolitan-area
+definitions, 2010\label{fig:Brazil-correlations-metro-definitions}}
+\begin{center}
+\includegraphics[width=0.82\textwidth]{../input/msa_duranton_10_baseline_correlation_plot.pdf}
+\begin{minipage}{0.8\textwidth}
+{\footnotesize
+	\textsc{Notes}:
+	The left panel depicts correlations of population and land area between metropolitan areas defined by contiguous areas of lights at night using different thresholds.
+	The right panel depicts the same for metropolitan areas defined by commuting flows using different thresholds.
+	The baseline for comparison in both panels is metropolitan areas defined by commuting flows in 2010 with a 10\% threshold, per \cite{Duranton:2015}.
+	Thus, the perfect correlation at the 10\% threshold in the right panel is tautological.
+	Footnote 8 describes how we pair metropolitan areas with their baseline counterparts.
+	The sample is restricted to metropolitan areas with population above 100,000.\par
+}
+\end{minipage}
+\end{center}
+
+\end{figure}
+
+
+\begin{table} \caption*{Table 4: Population shares for educational categories, 2010} \begin{center}
+\input{../input/edu_shares_Census_All_and_Metro.tex}
+\end{center}\end{table}
+
+
+\begin{table}[pth]
+\caption*{Table 5: Population elasticities for educational categories, 2010\label{tab:Brazil-edu-Population-elasticities}}
+\begin{centering}
+\resizebox{\textwidth}{!}{\input{../input/edupop_elasticities_Census2010_msa_compare_clean.tex}}
+\par\end{centering}
+\centering{}%
+\begin{minipage}[t]{0.95\textwidth}%
+\textsc{\footnotesize{}Notes}{\footnotesize{}:
+Each column reports OLS estimates of $\beta_{\nu}$ from a regression defined by equation 1.
+Skill fixed effects $\alpha_{\nu}$ are not reported.
+Standard errors are clustered by geographic unit.
+Each sample contains geographic units with population greater than 100,000.\par}
+\end{minipage}
+\end{table}
+
+
+\begin{figure}[pbh]
+\caption*{Figure 9: Non-parametric population elasticities for educational categories,
+2010\label{fig:Brazil-edu-Non-parametric}}
+\begin{centering}
+\includegraphics[width=0.75\textwidth]{../input/popelast_edu_lpoly.pdf}
+\par\end{centering}
+\centering{}%
+\begin{minipage}[t]{0.8\textwidth}%
+\textsc{\footnotesize{}Notes}{\footnotesize{}:
+Each series plots a local mean smoother using an Epanechnikov kernel.
+Metropolitan areas are defined by commuting ties between municipios, using Duranton (2015) algorithm with 10\% threshold.
+The histogram bars depict the number of metropolitan areas (on the right vertical axis).\par}%
+\end{minipage}
+\end{figure}
+
+
+\begin{table}[pht]
+\caption*{Table 10: Skill gradient in Brazilian metropolitan areas, 2010}
+\label{tab:skillgradient}
+\begin{center}
+\input{../input/distance_gradient_college.tex}
+\begin{minipage}{0.92\textwidth}
+{\footnotesize \textsc{Notes}:
+	The dependent variable is the share of residents who are college graduates in a municipio.
+	Distance to metro center is measured from the municipio centroid to the population-weighted average of constituent-municipio centroids as a share of the greatest distance.
+	The sample is restricted to metropolitan areas containing at least two municipios.
+	Standard errors, clustered by metropolitan area, are in parentheses.
+	The reported $p$-values test the null hypotheses that the coefficients estimated when using night-lights--based metropolitan areas are equal to the coefficients estimated when using arranjos or microregions.
+	The table also reports the number of SUR clusters used to compute those test statistics;
+	see Appendix C.2 for details.\par
+}
+\end{minipage}
+\end{center}
+\end{table}
+
+
+\begin{figure}[phb]
+\caption*{Figure 10: Skill gradient in Brazilian metropolitan areas, 2010}
+\label{fig:skillgradient30}
+\centering{} \includegraphics[width=0.6\textwidth]{../input/distance_gradient_college_msa_night_30.pdf}
+\begin{minipage}{0.8\textwidth}
+{\footnotesize \textsc{Notes}:
+	The two series are local mean smoothers of the share of residents who are college graduates in a municipio as a function of distance to metro center using an Epanechnikov kernel.
+	Dashed lines depict 95\% confidence intervals.
+	Metropolitan areas are defined by aggregating municipios using a light-intensity threshold of 30.\par
+}
+\end{minipage}
+\end{figure}
+
+
+\begin{table}
+\caption*{Table 12: Average nominal wages across Brazilian metropolitan areas, 2010}
+\label{tab:urbanwagepremia:Brazil}
+\begin{center}
+\input{../input/hce_pop_wage_Census2010.tex}
+\begin{minipage}{0.93\textwidth}
+{\footnotesize
+	\textsc{Notes}:
+	The dependent variable is the average nominal hourly wage in a metropolitan-area $\times$ gender $\times$ age $\times$ race $\times$ education cell.
+	The college graduate share takes values between 0 and 100.
+	Unreported controls are fixed effects for gender, age, race, and educational attainment.
+	Standard errors, clustered by metropolitan area, in parentheses.
+}
+\end{minipage}
+\end{center}
+\end{table}
+
+
+\begin{table}
+\caption*{Table 13: Skill premia in Brazilian metropolitan areas, 2010}
+\label{tab:skillpremia:Brazil}
+\begin{center}
+\input{../input/skillpremia3_Census2010.tex}
+\begin{minipage}{0.9\textwidth}
+{\footnotesize
+	\textsc{Notes}:
+	The dependent variable is a metropolitan area's difference in average log hourly wages between college graduates and high school graduates.\par
+}
+\end{minipage}
+\end{center}
+\end{table}
+
+
+
+\begin{figure}[hp]
+\caption*{Figure 11: Brazil occupational employment population elasticities, 2010\label{fig:Brazil-occ-elasticities}}
+\begin{centering}
+\includegraphics[width=0.45\textwidth]{../input/occpop_elasticities_Census2010}\includegraphics[width=0.45\textwidth]{../input/occpop_elasticities_Census2010_zoom}
+\par\end{centering}
+\centering{}%
+\begin{minipage}[t]{0.85\textwidth}%
+\textsc{\footnotesize{}Notes}{\footnotesize{}:
+Each observation is an occupational category.
+The population elasticity of employment is estimated by linear regression.
+Skill intensity is the average years of schooling of persons employed in that occupational category.
+Bubble sizes are proportionate to the occupational category's share of employment.
+Metropolitan areas are defined by commuting flows between municipios, using the Duranton (2015) algorithm with a 10\% threshold.
+Left panel includes all occupations; right panel omits agriculture.\par}%
+\end{minipage}
+\end{figure}
+
+
+\begin{figure}[hp]
+\caption{Fgiure 12: Brazil industrial employment population elasticities, 2010\label{fig:Brazil-ind-elasticities}}
+\begin{centering}
+\includegraphics[width=0.45\textwidth]{../input/indpop_elasticities_Census2010}\includegraphics[width=0.45\textwidth]{../input/indpop_elasticities_Census2010_zoom}
+\par\end{centering}
+\centering{}%
+\begin{minipage}[t]{0.85\textwidth}%
+\textsc{\footnotesize{}Notes}{\footnotesize{}:
+Each observation is an industrial category.
+The population elasticity of employment is estimated by linear regression.
+Skill intensity is the average years of schooling of persons employed in that industrial category.
+Bubble sizes are proportionate to the industrial category's share of employment.
+Metropolitan areas defined by commuting ties between municipios, using Duranton (2015) algorithm with 10\% threshold.\par}%
+\end{minipage}
+\end{figure}
+
+\subsection*{Appendix}
+
+\input{../input/brazil_municipios_area_details.tex}
+
+\begin{table} \caption*{Table C.1: Pairwise comparisons for educational categories, 2010} \begin{center}
+\input{../input/pairwise_edu.tex}
+\label{tab:edu_pairwise}
+\end{center}\end{table}
+
+\end{document}

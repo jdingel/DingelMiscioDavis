@@ -1,0 +1,30 @@
+The Instituto Brasileiro de Geografia e Estatística (IBGE, Brazilian Institute of Geography and Statistics) makes anonymized individual-level microdata available via its (Portuguese-language) \href{http://www.ibge.gov.br/home/estatistica/populacao/censo2010/resultados_gerais_amostra/resultados_gerais_amostra_tab_uf_microdados.shtm}{website}. 
+We imported the dataset using the \href{http://www.econ.puc-rio.br/datazoom/english/index.html}{Data Zoom Stata software} provided by PUC-RJ, a Brazilian university.
+Each observation includes a sampling weight, and the individual's municipio of residence, educational attainment, current occupation, and industry.
+Using those tools, you should produce a dataset called "CENSO10_pes.dta" and place it in the "initialdata" folder. It should have the following properties:
+
+CENSO10_pes.dta
+  obs:    20,635,472                          
+ vars:            11                          11 Dec 2016 00:09
+ size:   598,428,688                          
+--------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+--------------------------------------------------------------------------------
+v0010           double  %10.0g                individual sampling weight
+v6036           int     %8.0g                 age in years
+v6400           byte    %8.0g                 level of education
+v6461           int     %8.0g                 occupation codes (see Auxiliary
+                                                Variables - Ocupa��o)
+v6471           long    %12.0g                setor of activity/line of business
+                                                codes (see CNAEDOM)
+v0660           byte    %8.0g                 in which city and state or country
+                                                do you work
+v6604           long    %12.0g                city codes - work location
+v0661           byte    %8.0g                 go back home from work every day
+v6910           byte    %8.0g                 occupied in the week of reference
+v6930           byte    %8.0g                 position held in the occupation of
+                                                the main job
+munic           long    %10.0g                municipality codes without DV (6
+                                                digits)
+--------------------------------------------------------------------------------
