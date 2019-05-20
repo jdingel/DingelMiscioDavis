@@ -1,4 +1,4 @@
-This repository contains the data and code underlying the paper "Cities, Lights, and Skills in Developing Economies" by Jonathan Dingel, Antonio Miscio, and Don Davis.
+This repository contains the data and code underlying the paper "[Cities, Lights, and Skills in Developing Economies](http://faculty.chicagobooth.edu/jonathan.dingel/research/DingelMiscioDavis.pdf)" by Jonathan Dingel, Antonio Miscio, and Don Davis.
 
 We thank Dylan Clarke for excellent research assistance, epecially for doing the yeoman's work of implementing our algorithms in `R` after they were initially written in `ArcGIS`.
 
@@ -36,8 +36,8 @@ Uncompress the ZIP file into a working directory on your cluster or local machin
 2. From the Unix/Linux/MacOSX command line, navigate to a country directory.
 3. Typing `make` in a country directory will execute all the code.
 	* If you are in a computing environment that supports the [Slurm workload manager](https://slurm.schedmd.com/) (if the `Makefile` detects that the command `sbatch` is valid), tasks will be submitted as jobs to your computing cluster.
-	* If `sbatch` is not available, the `Makefile` will execute `Rscript` and `state-se` commands locally.
-	(Mac OS X users should [ensure](https://www.stata.com/support/faqs/mac/advanced-topics/) that `Rscript` and `state-se` are in their relevant `PATH`.)
+	* If `sbatch` is not available, the `Makefile` will execute `Rscript` and `stata-se` commands locally.
+	(Mac OS X users should [ensure](https://www.stata.com/support/faqs/mac/advanced-topics/) that `Rscript` and `stata-se` are in their relevant `PATH`.)
 
 ### Notes
 - It is best to replicate the project using the `make` approach described above.
