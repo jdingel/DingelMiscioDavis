@@ -1,6 +1,8 @@
-This repository contains the data and code underlying the paper "[Cities, Lights, and Skills in Developing Economies](http://faculty.chicagobooth.edu/jonathan.dingel/research/DingelMiscioDavis.pdf)" by Jonathan Dingel, Antonio Miscio, and Don Davis.
+This repository contains the data and code underlying the paper "[Cities, Lights, and Skills in Developing Economies](http://faculty.chicagobooth.edu/jonathan.dingel/research/DingelMiscioDavis.pdf)" in the _Journal of Urban Economics_ by Jonathan Dingel, Antonio Miscio, and Don Davis.
 
 We thank Dylan Clarke for excellent research assistance, epecially for doing the yeoman's work of implementing our algorithms in `R` after they were initially written in `ArcGIS`.
+
+If you want to apply our algorithm in your own work (rather than replicate our paper), see the [lights_to_cities](https://github.com/jdingel/lights_to_cities) repository.
 
 ## Code organization
 
