@@ -1,5 +1,3 @@
-///////////////////////////////////////
-
 capture program drop ranksize_coefficients
 program define ranksize_coefficients
 syntax, population(varname) geounitvar(varname) minimumpopulation(real) saveas(string)
@@ -82,7 +80,7 @@ save `tf_original', replace
 
 //Generate log rank and log size variables
 drop if missing(`geounitvar')==1
-collapse (firstnm) `population', by(`geounitvar') // collapse data
+collapse (sum) `population', by(`geounitvar') // collapse data
 egen rank = rank(-`population') // create rank
 keep if `population'>=`minimumpopulation'
 gen logpop = log(`population')
