@@ -4,6 +4,8 @@ We thank Dylan Clarke for excellent research assistance, epecially for doing the
 
 If you want to apply our algorithm in your own work (rather than replicate our paper), see the [lights_to_cities](https://github.com/jdingel/lights_to_cities) repository.
 
+If you want to download our metropolitan definitions for Brazil, China, or India without running any code, you can just download [the CSV files](http://www.jdingel.com/research/DingelMiscioDavis/index.html).
+
 ## Code organization
 
 The repository contains four top-level directories, one for each country: `brazil`, `china`, `india`, and `usa`.
